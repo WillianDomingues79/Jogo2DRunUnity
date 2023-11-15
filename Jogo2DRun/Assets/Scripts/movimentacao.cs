@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class movimentacao : MonoBehaviour
 {
+    private gameController _GameController;
     private Rigidbody2D playerRb;
-    public float velocidade;
-
-    //Limitação Cenário
-    public float limiteMaxY;
-    public float limiteMinY;
-    public float limiteMaxX;
-    public float limiteMinX;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        _GameController = FindObjectOfType(typeof(gameController)) as gameController;
+
         QualitySettings.vSyncCount = 1;
         playerRb = GetComponent<Rigidbody2D>();
     }
@@ -32,29 +29,29 @@ public class movimentacao : MonoBehaviour
         float posX = transform.position.x;
 
 
-        playerRb.velocity = new Vector2 (horizontal * velocidade, vertical * velocidade);//PARADO = 0, ANDANDO PRA FRENTE 2*1 = 2, ANDANDO PARA TRAS 2*(-2)=    -2
+        playerRb.velocity = new Vector2 (horizontal * _GameController.velocidade, vertical * _GameController.velocidade);//PARADO = 0, ANDANDO PRA FRENTE 2*1 = 2, ANDANDO PARA TRAS 2*(-2)=    -2
 
 
         //Limitação Cenário
         //Verificar Limite X
-        if (transform.position.x > limiteMaxX)
+        if (transform.position.x > _GameController.limiteMaxX)
         {
-            posX = limiteMaxX;
+            posX = _GameController.limiteMaxX;
         }
-        else if (transform.position.x < limiteMinX)
+        else if (transform.position.x < _GameController.limiteMinX)
         {
-            posX = limiteMinX;
+            posX = _GameController.limiteMinX;
         }
 
 
         //Verificar Limite Y
-        if (transform.position.y > limiteMaxY )
+        if (transform.position.y > _GameController.limiteMaxY )
         {
-            posY = limiteMaxY;
+            posY = _GameController.limiteMaxY;
         }
-        else if(transform.position.y < limiteMinY ) 
+        else if(transform.position.y < _GameController.limiteMinY ) 
         { 
-            posY = limiteMinY; 
+            posY = _GameController.limiteMinY; 
         }
 
         transform.position = new Vector3(posX, posY, 0);
