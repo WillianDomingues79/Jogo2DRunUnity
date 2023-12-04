@@ -304,7 +304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 56367a22ee98752438b9979105eba703, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -540,8 +540,8 @@ Transform:
   m_GameObject: {fileID: 639223537}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0291, y: -1.6647, z: 0.08647291}
-  m_LocalScale: {x: 23.185053, y: 2.1329, z: 1}
+  m_LocalPosition: {x: 0.1069, y: -1.6647, z: 0.08647291}
+  m_LocalScale: {x: 24.181368, y: 2.1329, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -934,8 +934,8 @@ MonoBehaviour:
   limiteMinX: -3.291
   velocidadeObjeto: -2
   distanciaDestruir: -7.3
-  tamanhoPonte: 0
-  pontePrefab: {fileID: 0}
+  tamanhoPonte: 7.173634
+  pontePrefab: {fileID: 2816780206782494456, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
 --- !u!4 &1774230359
 Transform:
   m_ObjectHideFlags: 0
@@ -992,7 +992,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1863858253752566863, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.1033
       objectReference: {fileID: 0}
     - target: {fileID: 1863858253752566863, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1033,6 +1033,26 @@ PrefabInstance:
     - target: {fileID: 2816780206782494456, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
       propertyPath: m_Name
       value: ponte
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763728184063328398, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
+      propertyPath: m_Size.x
+      value: 7.7732043
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763728184063328398, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582144070568734175, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693896053833088380, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
+      propertyPath: m_Size.x
+      value: 7.7736344
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693896053833088380, guid: 86e32586179a88b48a9bcd41babfb530, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
