@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movimentacao : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     private gameController _GameController;
     private Rigidbody2D playerRb;
@@ -20,11 +20,11 @@ public class movimentacao : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Movimentação entre eixos
+        //Movimentaï¿½ï¿½o entre eixos
         float horizontal = Input.GetAxisRaw("Horizontal");//Usa eixo HORIZONTAL, CONTROLE: SETAS <- ->
         float vertical = Input.GetAxisRaw("Vertical");
 
-        //Limitação Cenário
+        //Limitaï¿½ï¿½o Cenï¿½rio
         float posY = transform.position.y;
         float posX = transform.position.x;
 
@@ -32,7 +32,7 @@ public class movimentacao : MonoBehaviour
         playerRb.velocity = new Vector2 (horizontal * _GameController.velocidade, vertical * _GameController.velocidade);//PARADO = 0, ANDANDO PRA FRENTE 2*1 = 2, ANDANDO PARA TRAS 2*(-2)=    -2
 
 
-        //Limitação Cenário
+        //Limitaï¿½ï¿½o Cenï¿½rio
         //Verificar Limite X
         if (transform.position.x > _GameController.limiteMaxX)
         {
