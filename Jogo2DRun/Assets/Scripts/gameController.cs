@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class gameController : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class gameController : MonoBehaviour
     [Header("Config. Personagem")]
     public float velocidade;
 
-    //Limita��o Cen�rio
+    //Limitacao Cenario
     public float limiteMaxY;
     public float limiteMinY;
     public float limiteMaxX;
@@ -34,7 +36,11 @@ public class gameController : MonoBehaviour
     [Header("Globals")]
     public float posXPLayer;
     public int score;
+    public Text txtScore;
     
+    [Header("FX Sound")]
+    public AudioSource fxSource;
+    public AudioClip fxPontos;
 
     // Start is called before the first frame update
     void Start()
@@ -72,5 +78,11 @@ public class gameController : MonoBehaviour
 
     public void pontuar(int qtdPontos){
         score += qtdPontos;
+        txtScore.text = "Pontos: " + score.ToString();
+        fxSource.PlayOneShot(fxPontos);
+    }
+
+    public void mudarCena(string cenaDestino){
+        SceneManager.LoadScene(cenaDestino);
     }
 }

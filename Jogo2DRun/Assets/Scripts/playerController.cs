@@ -20,11 +20,11 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Movimenta��o entre eixos
+        //Movimentacao entre eixos
         float horizontal = Input.GetAxisRaw("Horizontal");//Usa eixo HORIZONTAL, CONTROLE: SETAS <- ->
         float vertical = Input.GetAxisRaw("Vertical");
 
-        //Limita��o Cen�rio
+        //Limitacao Cenario
         float posY = transform.position.y;
         float posX = transform.position.x;
 
@@ -32,7 +32,7 @@ public class playerController : MonoBehaviour
         playerRb.velocity = new Vector2 (horizontal * _GameController.velocidade, vertical * _GameController.velocidade);//PARADO = 0, ANDANDO PRA FRENTE 2*1 = 2, ANDANDO PARA TRAS 2*(-2)=    -2
 
 
-        //Limita��o Cen�rio
+        //Limitacao Cenario
         //Verificar Limite X
         if (transform.position.x > _GameController.limiteMaxX)
         {
@@ -55,5 +55,13 @@ public class playerController : MonoBehaviour
         }
 
         transform.position = new Vector3(posX, posY, 0);
+    }
+
+    void OnTriggerEnter2D() {
+        /*Debug.LogError("Game-Over");
+        //Application.Quit();
+        Time.timeScale = 0;
+        print("Bateu");*/
+        _GameController.mudarCena("gameOver");
     }
 }
